@@ -295,8 +295,8 @@ class SettingsTestCase(test.TestCase):
         self.assertTrue(isinstance(setting, value_class))
 
     def test_registration(self):
+        from dbsettings.values import BooleanValue, IntegerValue
         "Module and class settings can be mixed up"
-        from dbsettings import BooleanValue, IntegerValue
         self.assertCorrectSetting(BooleanValue, MODULE_NAME, '', 'clash1')
         self.assertCorrectSetting(IntegerValue, MODULE_NAME, 'ModelClash', 'clash1')
         self.assertCorrectSetting(IntegerValue, MODULE_NAME, 'ModelClash', 'clash2')
